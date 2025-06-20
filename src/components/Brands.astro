@@ -1,3 +1,13 @@
+---
+import { Image } from "astro:assets";
+
+import hikvision from "../assets/images/brands/hikvision.jpg";
+import ubiquiti from "../assets/images/brands/ubiquiti.jpg";
+import nexxt from "../assets/images/brands/nexxt.jpg";
+import zkt from "../assets/images/brands/zkt.jpg";
+import suprema from "../assets/images/brands/suprema.png";
+---
+
 <!-- Brands Banner Section -->
 <section
   id="marcas"
@@ -13,30 +23,31 @@
       class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 animate-fade-in"
       style="animation-delay: 0.2s;"
     >
-      <img
-        src="/public/hikvision.jpg"
+      <Image
+        src={hikvision}
         alt="Logo Marca A"
-        class="h-24 md:h-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
       />
-      <img
-        src="/public/ubiquiti.jpg"
+
+      <Image
+        src={ubiquiti}
         alt="Logo Marca B"
-        class="h-24 md:h-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
       />
-      <img
-        src="/public/nexxt.jpg"
+      <Image
+        src={nexxt}
         alt="Logo Marca C"
-        class="h-24 md:h-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
       />
-      <img
-        src="/public/zkt.jpg"
+      <Image
+        src={zkt}
         alt="Logo Marca D"
-        class="h-24 md:h-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
       />
-      <img
-        src="/public/suprema.png"
+      <Image
+        src={suprema}
         alt="Logo Marca E"
-        class="h-24 md:h-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
+        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
       />
     </div>
   </div>

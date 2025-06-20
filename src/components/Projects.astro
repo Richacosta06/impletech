@@ -1,3 +1,11 @@
+---
+import { Image } from "astro:assets";
+
+import comercial from "../assets/images/projects/comercial.jpg";
+import residencial from "../assets/images/projects/residencial.jpg";
+import industrial from "../assets/images/projects/industrial.jpg";
+---
+
 <!-- Project Gallery Section -->
 <section
   id="galeria-proyectos"
@@ -15,8 +23,8 @@
         class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
         style="animation-delay: 0.2s;"
       >
-        <img
-          src="/public/comercial.jpg"
+        <Image
+          src={comercial}
           alt="Imagen de Proyecto Comercial"
           class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
         />
@@ -53,8 +61,8 @@
         class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
         style="animation-delay: 0.4s;"
       >
-        <img
-          src="/public/residencial.jpg"
+        <Image
+          src={residencial}
           alt="Imagen de Proyecto Residencial"
           class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
         />
@@ -91,8 +99,8 @@
         class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
         style="animation-delay: 0.6s;"
       >
-        <img
-          src="/public/industrial.jpg"
+        <Image
+          src={industrial}
           alt="Imagen de Proyecto Industrial"
           class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
         />
