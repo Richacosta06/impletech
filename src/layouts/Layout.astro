@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -9,7 +10,20 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:url" content="https://impletechsecurity.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Impletech Security" />
+    <meta
+      property="og:description"
+      content="Soluciones de seguridad para tu negocio"
+    />
+
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:locale" content="es_ES" />
+
     <title>Impletech</title>
+    <ClientRouter />
   </head>
   <body>
     <slot />
