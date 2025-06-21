@@ -4,13 +4,12 @@ import { Image } from "astro:assets";
 import comercial from "../assets/images/projects/comercial.jpg";
 import residencial from "../assets/images/projects/residencial.jpg";
 import industrial from "../assets/images/projects/industrial.jpg";
+import electronica from "../assets/images/electronica.jpeg";
+import securityCenter from "../assets/images/security-center.jpeg";
 ---
 
 <!-- Project Gallery Section -->
-<section
-  id="galeria-proyectos"
-  class="py-16 md:py-28 bg-impletech-mid-bg border-t border-gray-200"
->
+<section id="galeria-proyectos" class="py-16 md:py-28 border-t border-gray-200">
   <div class="container mx-auto px-4">
     <h2
       class="text-4xl md:text-5xl font-bold text-center text-impletech-blue mb-16 animate-fade-in"
@@ -36,24 +35,6 @@ import industrial from "../assets/images/projects/industrial.jpg";
             Implementación integral de CCTV de alta definición y sistema de
             control de acceso avanzado para todo el complejo.
           </p>
-          <!-- <a
-            href="#"
-            class="inline-block mt-4 text-impletech-blue hover:text-impletech-green font-medium flex items-center group"
-          >
-            Ver Detalles
-            <svg
-              class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path></svg
-            >
-          </a> -->
         </div>
       </div>
       <!-- Project Item 2 -->
@@ -74,24 +55,6 @@ import industrial from "../assets/images/projects/industrial.jpg";
             Instalación de cámaras perimetrales, videoporteros y control de
             acceso vehicular para mayor seguridad de residentes.
           </p>
-          <!-- <a
-            href="#"
-            class="inline-block mt-4 text-impletech-blue hover:text-impletech-green font-medium flex items-center group"
-          >
-            Ver Detalles
-            <svg
-              class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path></svg
-            >
-          </a> -->
         </div>
       </div>
       <!-- Project Item 3 -->
@@ -112,37 +75,56 @@ import industrial from "../assets/images/projects/industrial.jpg";
             Diseño e instalación de un sistema de vigilancia robusto y control
             de acceso biométrico para áreas críticas.
           </p>
-          <!-- <a
-            href="#"
-            class="inline-block mt-4 text-impletech-blue hover:text-impletech-green font-medium flex items-center group"
-          >
-            Ver Detalles
-            <svg
-              class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"></path></svg
-            >
-          </a> -->
         </div>
       </div>
     </div>
-    <!-- <div
-      class="text-center mt-16 animate-fade-in"
-      style="animation-delay: 0.8s;"
-    >
-      <a
-        href="#"
-        class="inline-block bg-impletech-blue text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-impletech-green hover:text-impletech-dark-bg transition-all duration-300 transform hover:scale-105 active:scale-95"
+  </div>
+</section>
+
+<!-- Informational Graphics Section -->
+<section id="graficos-informativos" class="bg-gray-50 pb-16 md:pb-28">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- Informational Graphic 1 -->
+      <div
+        class="bg-white rounded-lg shadow-lg overflow-hidden animate-scale-in"
+        style="animation-delay: 0.3s;"
       >
-        Ver Todos los Proyectos
-      </a>
-    </div> -->
+        <Image
+          src={electronica}
+          alt="Sistemas Electrónicos Avanzados"
+          class="w-full h-96 object-contain bg-gray-100"
+        />
+        <div class="p-8">
+          <h3 class="text-3xl font-bold text-impletech-dark-text mb-4">
+            Sistemas Electrónicos
+          </h3>
+          <p class="text-impletech-muted-text-light text-xl leading-relaxed">
+            Tecnología de vanguardia para automatización y control inteligente
+            de instalaciones comerciales, residenciales e industriales.
+          </p>
+        </div>
+      </div>
+      <!-- Informational Graphic 2 -->
+      <div
+        class="bg-white rounded-lg shadow-lg overflow-hidden animate-scale-in"
+        style="animation-delay: 0.5s;"
+      >
+        <Image
+          src={securityCenter}
+          alt="Centro de Monitoreo de Seguridad"
+          class="w-full h-96 object-contain bg-gray-100"
+        />
+        <div class="p-8">
+          <h3 class="text-3xl font-bold text-impletech-dark-text mb-4">
+            Centro de Seguridad
+          </h3>
+          <p class="text-impletech-muted-text-light text-xl leading-relaxed">
+            Monitoreo 24/7 con tecnología avanzada y personal especializado para
+            garantizar la máxima protección de sus instalaciones.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
