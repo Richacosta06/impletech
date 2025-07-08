@@ -1,3 +1,7 @@
+--- 
+import { Icon } from 'astro-icon/components';
+---
+
 <!-- Plans Section -->
 <section id="planes" class="py-16 md:py-28 border-t border-gray-200">
   <div class="container mx-auto px-4">
@@ -20,20 +24,7 @@
         class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col items-center text-center animate-fade-in h-full"
         style="animation-delay: 0.2s;"
       >
-        <svg
-          class="w-24 h-24 mb-6 text-impletech-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6-4h.01M18 9l-7-7-7 7"
-          ></path>
-        </svg>
+        <Icon name="mdi:home-lightning-bolt" class="w-[4.5rem] h-[4.5rem] mb-6 text-impletech-green" />
         <h3 class="text-2xl font-semibold text-impletech-dark-text mb-4">
           🏠 Plan Hogar Inteligente
         </h3>
@@ -44,65 +35,21 @@
           class="space-y-4 text-impletech-muted-text-light text-lg text-left mt-6 flex-grow"
         >
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Visita mensual para revisión y corrección.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span
               >Verificación de cámaras, sensores y dispositivos domóticos.</span
             >
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Reprogramación de rutinas inteligentes.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Soporte técnico remoto y atención preferencial.</span>
           </li>
         </ul>
@@ -120,20 +67,7 @@
         class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col items-center text-center animate-fade-in h-full"
         style="animation-delay: 0.4s;"
       >
-        <svg
-          class="w-24 h-24 mb-6 text-impletech-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.928 12c0 3.053 1.053 5.864 2.898 8.169a12 12 0 0015.613-.004c1.845-2.305 2.898-5.116 2.898-8.169 0-4.047-1.39-7.787-3.614-10.352z"
-          ></path>
-        </svg>
+        <Icon name="mdi:shield-check" class="w-[4.5rem] h-[4.5rem] mb-6 text-impletech-green" />
         <h3 class="text-2xl font-semibold text-impletech-dark-text mb-4">
           🛡️ Plan Escudo Total
         </h3>
@@ -144,78 +78,23 @@
           class="space-y-4 text-impletech-muted-text-light text-lg text-left mt-6 flex-grow"
         >
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Auditoría técnica completa trimestral.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Mantenimiento de CCTV, alarmas, automatización y redes.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Limpieza, ajustes y actualizaciones de firmware.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Diagnóstico anticipado de fallas.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Asesoramiento en nuevas integraciones.</span>
           </li>
         </ul>
@@ -233,20 +112,7 @@
         class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col items-center text-center animate-fade-in h-full"
         style="animation-delay: 0.6s;"
       >
-        <svg
-          class="w-24 h-24 mb-6 text-impletech-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M21 13.255A23.557 23.557 0 0112 16.5c-3.136 0-6.195-.572-9-1.609M16.022 8.945L13.758 7.02c-.792-.663-1.926-.663-2.718 0l-2.264 1.925m-.125 3.93h.008v.008h-.008zM19.5 9l-7.5 7.5-7.5-7.5"
-          ></path>
-        </svg>
+        <Icon name="mdi:brain" class="w-[4.5rem] h-[4.5rem] mb-6 text-impletech-green" />
         <h3 class="text-2xl font-semibold text-impletech-dark-text mb-4">
           🧠 Plan Pro Avanzado
         </h3>
@@ -257,63 +123,19 @@
           class="space-y-4 text-impletech-muted-text-light text-lg text-left mt-6 flex-grow"
         >
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Gestión integral de la infraestructura.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Panel de monitoreo y reportes en tiempo real.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Optimización de procesos operativos.</span>
           </li>
           <li class="flex items-start">
-            <svg
-              class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M5 13l4 4L19 7"></path></svg
-            >
+            <Icon name="mdi:check-circle" class="w-5 h-5 text-impletech-green mr-3 mt-1 flex-shrink-0" />
             <span>Planificación tecnológica anual y escalabilidad.</span>
           </li>
         </ul>

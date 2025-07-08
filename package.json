@@ -9,10 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.10.0",
-    "astro-icon": "^1.1.5",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.10"
+  },
+  "devDependencies": {
+    "astro-icon": "^1.1.5"
   }
 }

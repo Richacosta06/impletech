@@ -4,8 +4,10 @@ import { Image } from "astro:assets";
 import comercial from "../assets/images/projects/comercial.jpg";
 import residencial from "../assets/images/projects/residencial.jpg";
 import industrial from "../assets/images/projects/industrial.jpg";
-import electronica from "../assets/images/electronica.jpeg";
-import securityCenter from "../assets/images/security-center.jpeg";
+
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
 ---
 
 <!-- Project Gallery Section -->
@@ -17,66 +19,39 @@ import securityCenter from "../assets/images/security-center.jpeg";
       Proyectos Destacados
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-      <!-- Project Item 1 -->
-      <div
-        class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
-        style="animation-delay: 0.2s;"
-      >
-        <Image
-          src={comercial}
-          alt="Imagen de Proyecto Comercial"
-          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-        />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
-            Circuito Cerrado de TV
-          </h3>
-          <p class="text-impletech-muted-text-light text-lg leading-relaxed">
-            Implementación integral de CCTV de alta definición y sistema de
-            control de acceso avanzado para todo el complejo.
-          </p>
-        </div>
-      </div>
-      <!-- Project Item 2 -->
-      <div
-        class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
-        style="animation-delay: 0.4s;"
-      >
-        <Image
-          src={residencial}
-          alt="Imagen de Proyecto Residencial"
-          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-        />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
-            Control de Acceso
-          </h3>
-          <p class="text-impletech-muted-text-light text-lg leading-relaxed">
-            Instalación de cámaras perimetrales, videoporteros y control de
-            acceso vehicular para mayor seguridad de residentes.
-          </p>
-        </div>
-      </div>
-      <!-- Project Item 3 -->
-      <div
-        class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
-        style="animation-delay: 0.6s;"
-      >
-        <Image
-          src={industrial}
-          alt="Imagen de Proyecto Industrial"
-          class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-        />
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
-            Mantenimiento Preventivo
-          </h3>
-          <p class="text-impletech-muted-text-light text-lg leading-relaxed">
-            Diseño e instalación de un sistema de vigilancia robusto y control
-            de acceso biométrico para áreas críticas.
-          </p>
-        </div>
-      </div>
+      {
+        projects.map((project) => (
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden animate-scale-in"
+            style={`animation-delay: ${0.2 + projects.indexOf(project) * 0.2}s;`}
+          >
+            <Image
+              transition:name={`img-${project.slug}`}
+              src={`/${project.data.img}`}
+              alt={project.data.title}
+              width={600}
+              height={400}
+              class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+            />
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
+                {project.data.title}
+              </h3>
+              <p class="text-impletech-muted-text-light text-lg leading-relaxed">
+                {project.data.description}
+              </p>
+              <div class="mt-4">
+                <a
+                  href={`/proyecto/${project.slug}`}
+                  class="inline-block bg-impletech-blue text-white px-6 py-3 rounded-md hover:bg-impletech-dark-blue transition-colors duration-300"
+                >
+                  Ver más
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
