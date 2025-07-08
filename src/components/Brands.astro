@@ -16,6 +16,24 @@ import honeywell from "../assets/images/brands/honeywell.jpg";
 import fortinet from "../assets/images/brands/fortinet.jpg";
 import crestron from "../assets/images/brands/crestron.jpg";
 import dmp from "../assets/images/brands/dmp.jpg";
+
+const brands = [
+  { src: hikvision, alt: "Logo Hikvision" },
+  { src: ubiquiti, alt: "Logo Ubiquiti" },
+  { src: nexxt, alt: "Logo Nexxt" },
+  { src: zkt, alt: "Logo ZKTeco" },
+  { src: suprema, alt: "Logo Suprema" },
+  { src: control4, alt: "Logo Control4" },
+  { src: softguard, alt: "Logo Softguard" },
+  { src: savant, alt: "Logo Savant" },
+  { src: milestone, alt: "Logo Milestone" },
+  { src: march, alt: "Logo March" },
+  { src: knx, alt: "Logo KNX" },
+  { src: honeywell, alt: "Logo Honeywell" },
+  { src: fortinet, alt: "Logo Fortinet" },
+  { src: crestron, alt: "Logo Crestron" },
+  { src: dmp, alt: "Logo DMP" },
+];
 ---
 
 <!-- Brands Banner Section -->
@@ -26,86 +44,99 @@ import dmp from "../assets/images/brands/dmp.jpg";
     >
       Marcas con las que trabajamos
     </h2>
-    <div
-      class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 animate-fade-in"
-      style="animation-delay: 0.2s;"
-    >
-      <Image
-        src={hikvision}
-        alt="Logo Marca A"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-
-      <Image
-        src={ubiquiti}
-        alt="Logo Marca B"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={nexxt}
-        alt="Logo Marca C"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={zkt}
-        alt="Logo Marca D"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={suprema}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={control4}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={softguard}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={savant}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={milestone}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={march}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={knx}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={honeywell}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={fortinet}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={crestron}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
-      <Image
-        src={dmp}
-        alt="Logo Marca E"
-        class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-      />
+    <!-- Swiper -->
+    <div class="swiper brands-swiper-container animate-fade-in">
+      <div class="swiper-wrapper items-center">
+        {
+          brands.map((brand) => (
+            <div class="swiper-slide">
+              <Image
+                src={brand.src}
+                alt={brand.alt}
+                class="h-24 w-24 md:h-36 md:w-36 opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0 mx-auto"
+              />
+            </div>
+          ))
+        }
+      </div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next text-impletech-blue"></div>
+      <div class="swiper-button-prev text-impletech-blue"></div>
     </div>
   </div>
 </section>
+
+<style is:global>
+  .brands-swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .brands-swiper-container .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .brands-swiper-container .swiper-button-next,
+  .brands-swiper-container .swiper-button-prev {
+    color: var(--color-impletech-blue) !important;
+    --swiper-navigation-size: 2rem; /* Adjust size */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+
+  .brands-swiper-container .swiper-button-prev {
+    left: -3rem; /* Adjust as needed to move it further left */
+  }
+
+  .brands-swiper-container .swiper-button-next {
+    right: -3rem; /* Adjust as needed to move it further right */
+  }
+
+  .brands-swiper-container .swiper-button-next:after,
+  .brands-swiper-container .swiper-button-prev:after {
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  // @ts-ignore
+  import Swiper from "swiper/bundle";
+  import "swiper/css/bundle";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".brands-swiper-container", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 2,
+      spaceBetween: 30,
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 50,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 60,
+        },
+      },
+      navigation: {
+        nextEl: ".brands-swiper-button-next",
+        prevEl: ".brands-swiper-button-prev",
+      },
+    });
+  });
+</script>
