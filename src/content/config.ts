@@ -12,6 +12,24 @@ const projectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     img: z.string(),
+    implementation_model: z.string(),
+    client: z.string(),
+    status: z.string(),
+    scope: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string(),
+      })
+    ),
+    results: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string(),
+      })
+    ),
+    final_impact: z.string(),
   }),
 });
 

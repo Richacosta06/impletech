@@ -1,7 +1,8 @@
----
+--- 
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -13,15 +14,14 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { Content } = await project.render();
 const { data } = project;
-const { title, img, description } = data;
+const { title, img, description, implementation_model, client, status, scope, results, final_impact } = data;
 ---
 
 <Layout title={title}>
   <section class="container mx-auto px-4 py-16 md:py-28">
     <div
-      class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden"
+      class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden"
     >
       <Image
         transition:name={`img-${project.slug}`}
@@ -31,15 +31,79 @@ const { title, img, description } = data;
         height={600}
         class="w-full h-96 object-cover"
       />
-      <div class="p-8">
+      <div class="p-8 lg:p-12">
         <h1 class="text-4xl md:text-5xl font-bold text-impletech-blue mb-4">
           {title}
         </h1>
         <p class="text-impletech-muted-text-light text-lg mb-8">
           {description}
         </p>
-        <div class="prose prose-lg max-w-none text-impletech-dark-text">
-          <Content />
+
+        <!-- Project Details -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-impletech-dark-text mb-6 border-b-2 border-impletech-green pb-2">
+            Detalles del Proyecto
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-impletech-dark-text text-lg">
+            <div>
+              <p class="font-semibold">Modelo de Implementación:</p>
+              <p>{implementation_model}</p>
+            </div>
+            <div>
+              <p class="font-semibold">Cliente:</p>
+              <p>{client}</p>
+            </div>
+            <div>
+              <p class="font-semibold">Estado:</p>
+              <p>{status}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scope of the Solution -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-impletech-dark-text mb-6 border-b-2 border-impletech-green pb-2">
+            Alcance de la Solución
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {scope.map((item) => (
+              <div class="flex items-start space-x-4">
+                <Icon name={item.icon} class="w-12 h-12 text-impletech-green flex-shrink-0" />
+                <div>
+                  <h3 class="text-xl font-semibold text-impletech-dark-text mb-2">{item.title}</h3>
+                  <p class="text-impletech-muted-text-light text-base">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Achieved Results -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-impletech-dark-text mb-6 border-b-2 border-impletech-green pb-2">
+            Resultados Obtenidos
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {results.map((item) => (
+              <div class="flex items-start space-x-4">
+                <Icon name={item.icon} class="w-12 h-12 text-impletech-green flex-shrink-0" />
+                <div>
+                  <h3 class="text-xl font-semibold text-impletech-dark-text mb-2">{item.title}</h3>
+                  <p class="text-impletech-muted-text-light text-base">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Final Impact -->
+        <div>
+          <h2 class="text-3xl font-bold text-impletech-dark-text mb-6 border-b-2 border-impletech-green pb-2">
+            Impacto Final
+          </h2>
+          <p class="text-impletech-muted-text-light text-lg">
+            {final_impact}
+          </p>
         </div>
       </div>
     </div>
