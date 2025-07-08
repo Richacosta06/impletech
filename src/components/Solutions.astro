@@ -1,4 +1,10 @@
-<!-- Solutions Overview Section -->
+---
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+const solutions = await getCollection("solutions");
+---
+
 <section id="soluciones" class="py-16 md:py-28 border-t border-gray-200">
   <div class="container mx-auto px-4">
     <h2
@@ -6,88 +12,122 @@
     >
       Soluciones de Seguridad Sólidas y Fiables
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-      <!-- Solution Item: Cámaras y Videovigilancia -->
-      <div
-        class="flex flex-col items-center text-center animate-fade-in"
-        style="animation-delay: 0.2s;"
-      >
-        <svg
-          class="w-24 h-24 mb-6 text-impletech-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M15 10l4.872-3.248A1 1 0 0121 7.42v9.16a1 1 0 01-1.128.988L15 14m-5 4v2a2 2 0 002 2h4a2 2 0 002-2v-2M3 8V6a2 2 0 012-2h4l2-2h4a2 2 0 012 2v2M3 8a2 2 0 01-2-2v-2a2 2 0 012-2h4.586a1 1 0 01.707.293l3.414 3.414A1 1 0 0013.414 10H15"
-          ></path>
-        </svg>
-        <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
-          Cámaras y Videovigilancia
-        </h3>
-        <p class="text-impletech-muted-text-light text-lg leading-relaxed">
-          Sistemas de cámaras de alta definición y monitoreo constante para una
-          visión clara de su propiedad.
-        </p>
+    <!-- Swiper -->
+    <div class="swiper solutions-swiper-container animate-fade-in">
+      <div class="swiper-wrapper pb-16">
+        {
+          solutions.map((solution) => (
+            <div class="swiper-slide h-auto">
+              <div class="flex flex-col items-center text-center h-full">
+                <div set:html={solution.data.icon} />
+                <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
+                  {solution.data.title}
+                </h3>
+                <p class="text-impletech-muted-text-light text-lg leading-relaxed">
+                  {solution.body}
+                </p>
+              </div>
+            </div>
+          ))
+        }
       </div>
-      <!-- Solution Item: Circuito Cerrado de TV (CCTV) -->
-      <div
-        class="flex flex-col items-center text-center animate-fade-in"
-        style="animation-delay: 0.4s;"
-      >
-        <svg
-          class="w-24 h-24 mb-6 text-impletech-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M9 17v-2m3 2v-4m3 2v-2m-8-10H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2h-2M8 7h.01M12 7h.01M16 7h.01M21 12h-6"
-          ></path>
-        </svg>
-        <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
-          Circuito Cerrado de TV (CCTV)
-        </h3>
-        <p class="text-impletech-muted-text-light text-lg leading-relaxed">
-          Implementación y gestión de sistemas CCTV robustos para una
-          supervisión integral y grabación de eventos.
-        </p>
-      </div>
-      <!-- Solution Item: Control de Acceso -->
-      <div
-        class="flex flex-col items-center text-center animate-fade-in"
-        style="animation-delay: 0.6s;"
-      >
-        <svg
-          class="w-24 h-24 mb-6 text-impletech-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M8 11V7a4 4 0 118 0v4m-5 4h2m-2 4h2M9 21H5a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2h-4"
-          ></path>
-        </svg>
-        <h3 class="text-2xl font-semibold text-impletech-dark-text mb-3">
-          Control de Acceso Seguro
-        </h3>
-        <p class="text-impletech-muted-text-light text-lg leading-relaxed">
-          Sistemas de acceso sin llave, biométricos y basados en tarjetas para
-          proteger sus instalaciones.
-        </p>
-      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- Add Navigation -->
+      <div class="swiper-button-next text-impletech-blue"></div>
+      <div class="swiper-button-prev text-impletech-blue"></div>
     </div>
   </div>
 </section>
+
+<style is:global>
+  .solutions-swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #d1d5db; /* gray-300 */
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-impletech-green) !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--color-impletech-blue) !important;
+    --swiper-navigation-size: 2rem; /* Adjust size */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+
+  .swiper-button-prev {
+    left: -3rem; /* Adjust as needed to move it further left */
+  }
+
+  .swiper-button-next {
+    right: -3rem; /* Adjust as needed to move it further right */
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  // @ts-ignore
+  import Swiper from "swiper/bundle";
+  import "swiper/css/bundle";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".solutions-swiper-container", {
+      // Optional parameters
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      spaceBetween: 30,
+      breakpoints: {
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+      },
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+</script>
